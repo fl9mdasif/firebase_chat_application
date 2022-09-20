@@ -1,0 +1,202 @@
+.formContainer {
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .formWrapper {
+        background-color: #fff;
+        padding: 20px 60px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        .logo {
+            color: #5d5b8d;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .title {
+            color: #5d5b8d;
+            font-size: 12px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            input {
+                padding: 12px;
+                border: none;
+                width: 250px;
+                border-bottom: 1px solid #a7bcff;
+            }
+
+            button {
+                background-color: #7b96ec;
+                color: #fff;
+                padding: 10px;
+                bottom: none;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+            }
+
+            img {
+                width: 45px;
+                height: 45px;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                span {
+                    font-size: 13px;
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        p {
+            color: #5d5b8d;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+    }
+}
+
+// home
+.home {
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+
+        .sidebar {
+            flex: 1;
+            border-right: 1px solid black;
+            background-color: #3e3c61;
+            overflow-y: auto;
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                background-color: #2f2d52;
+                height: 40px;
+                padding: 8px;
+                justify-content: space-between;
+                color: #ddddf7;
+
+                .logo {
+                    font-weight: bold;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+
+                    img {
+                        height: 24px;
+                        width: 24px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        object-fit: cover;
+                    }
+
+                    span {
+                        font-size: 12px;
+                    }
+
+                    button {
+                        background-color: #5d5b8d;
+                        color: #ddddf7;
+                        font-size: 10px;
+                        cursor: pointer;
+                        border: none;
+                        padding: 5px 9px;
+                        border-radius: 7px;
+                    }
+                }
+            }
+
+            .search {
+                border: 1px solid rgb(104, 104, 104);
+
+                .searchForm {
+                    padding: 10px;
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        color: white;
+                        outline: none;
+
+                        &::placeholder {
+                            color: lightgrey;
+                        }
+                    }
+                }
+
+
+            }
+
+            .userChat {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #2f2d52;
+                }
+
+                img {
+                    width: 45px;
+                    height: 45px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .userChatInfo {
+                    span {
+                        font-size: 16px;
+                        color: lightgrey;
+                        font-weight: 500;
+
+                    }
+
+                    p {
+                        font-size: 12px;
+                        color: lightgrey;
+                    }
+                }
+            }
+        }
+
+        .chat {
+            flex: 2
+        }
+
+    }
+
+
+}
