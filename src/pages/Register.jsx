@@ -23,29 +23,32 @@ export const Register = () => {
 
             const storageRef = ref(storage, displayName);
 
-            const uploadTask = uploadBytesResumable(storageRef, file);
-            uploadTask.on(
-                (error) => {
-                    setErr(true)
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await uploadBytesResumable(storageRef, file).then(() => {
+                getDownloadURL(storageRef).then(async (downloadURL) => {
+                    try {
+                        //Update profile
                         await updateProfile(res.user, {
                             displayName,
-                            photoURl: downloadURL
+                            photoURL: downloadURL,
                         });
-                        await setDoc(doc(db, 'users', res.user.uid), {
+                        //create user on firestore
+                        await setDoc(doc(db, "users", res.user.uid), {
                             uid: res.user.uid,
                             displayName,
                             email,
-                            photoURl: downloadURL
-                        })
+                            photoURL: downloadURL,
+                        });
 
-                        await setDoc(doc(db, 'userChats', res.user.uid), {});
-                        navigate('/');
-                    });
-                }
-            );
+                        //create empty user chats on firestore
+                        await setDoc(doc(db, "userChats", res.user.uid), {});
+                        navigate("/");
+                    } catch (err) {
+                        console.log(err);
+                        setErr(true);
+                        // setLoading(false);
+                    }
+                });
+            });
 
 
         } catch (err) {
