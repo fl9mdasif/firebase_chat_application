@@ -75,6 +75,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: start;
+                cursor: pointer;
 
                 span {
                     font-size: 13px;
@@ -301,6 +302,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 8px;
+                        margin-bottom: 10px;
 
                         p {
                             background-color: #fff;
