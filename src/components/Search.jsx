@@ -2,6 +2,7 @@ import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updat
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../context/AuthContext';
 import { db } from "../firebase.init";
+import search from '../assets/logo/search-icon-png-21.png'
 
 export const Search = () => {
 
@@ -28,9 +29,9 @@ export const Search = () => {
         }
     };
 
-    const handleKey = (e) => {
-        e.code === "Enter" && handleSearch();
-    };
+    // const handleKey = (e) => {
+    //     e.code === "Enter" && handleSearch();
+    // };
 
     const handleSelect = async () => {
         //check whether the group(chats in firestore) exists, if not create
@@ -77,9 +78,13 @@ export const Search = () => {
             <div className="searchForm">
                 <input
                     value={username}
-                    onKeyDown={handleKey}
+                    // onKeyDown={handleKey}
                     onChange={e => setUsername(e.target.value)}
-                    placeholder="Search a name" type="text" name="text" />
+                    placeholder="Search name" type="text" name="text"
+                />
+                <span onClick={handleSearch}>
+                    <img src={search} alt="" />
+                </span>
             </div>
             {err && <span style={{ color: 'red' }}>Something went wrong</span>}
             {user &&
@@ -87,7 +92,7 @@ export const Search = () => {
                     <img src={user.photoURL} alt="" />
                     <div className="userChatInfo">
                         <span>{user.displayName}</span>
-                        <p>Hello</p>
+                        {/* <p>Hello</p> */}
                     </div>
                 </div>
             }

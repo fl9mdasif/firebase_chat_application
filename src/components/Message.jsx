@@ -11,7 +11,7 @@ export const Message = ({ message }) => {
     useEffect(() => {
         ref.current?.scrollIntoView({ behavior: "smooth" });
     }, [message]);
-    // console.log(message.date.timestamp())
+    console.log(message.date)
 
     return (
         <div
