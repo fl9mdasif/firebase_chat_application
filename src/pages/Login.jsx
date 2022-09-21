@@ -32,7 +32,7 @@ export const Login = () => {
                     <input type='password' placeholder='Password' />
 
                     <button>Login</button>
-                    {err && <span>Something went wrong</span>}
+                    {err && <span style={{ color: 'red' }}>Something went wrong</span>}
                 </form>
                 <p>Don't have an account? <Link to='/register'>Register now</Link></p>
             </div>

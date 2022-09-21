@@ -74,7 +74,7 @@ export const Register = () => {
                         <span> Upload your image</span>
                     </label>
                     <button>Sign Up</button>
-                    {err && <span>Something went wrong</span>}
+                    {err && <span style={{ color: 'red' }}>Something went wrong</span>}
                 </form>
                 <p>Already have an account? <Link to='/login'>Login now</Link></p>
                 <p></p>
